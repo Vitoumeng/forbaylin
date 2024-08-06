@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header" id="header">
+      <nav class="nav">
+        <a href="#" class="nav__logo">Lin</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">about</a>
+            </li>
+            <li class="nav__item">
+              <a href="#services" class="nav__link">services</a>
+            </li>
+            <li class="nav__item">
+              <a href="#portfolio" class="nav__link">portfolio</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">contact</a>
+            </li>
+          </ul>
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </nav>
+    </header>
+
+    <section id="home">home</section>
+    <section id="about">about</section>
+    <section id="services">services</section>
+    <section id="portfolio">portfolio</section>
+    <section id="contact">contact</section>
+
+    <footer>
+      <p class="footer__copy">
+        &copy; 2022 - All rights reserved | Designed by LinCute
+      </p>
+    </footer>
+
+    <a href="#" class="scrollup" id="scrol-up">
+      <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <script>
+      const navToggle = document.getElementById("nav-toggle");
+      const navMenu = document.getElementById("nav-menu");
+      const navClose = document.getElementById("nav-close");
+
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.add("show-menu");
+      });
+      navClose.addEventListener("click", () => {
+        navMenu.classList.remove("show-menu");
+      });
+
+      const links = document.querySelectorAll(".nav__link");
+
+      const navMobile = () => {
+        const navMenu = document.getElementById("nav-menu");
+
+        navMenu.classList.remove("show-menu");
+      };
+
+      links.forEach((link) => {
+        link.addEventListener("click", navMobile);
+      });
+
+      const showScroll = () => {
+        const scrollUp = document.getElementById("scrol-up");
+
+        this.scrollY >= 250 ? scrollUp.classList.add("show-scroll") : scrollUp.classList.remove("show-scroll");
+      }
+
+      window.addEventListener("scroll", showScroll);
+    </script>
+  </body>
+</html>
